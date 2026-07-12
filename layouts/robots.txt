@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /resume.pdf
-{{ printf "Sitemap: %s" (absURL "sitemap.xml") }}
