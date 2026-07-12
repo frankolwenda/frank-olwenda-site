@@ -2,7 +2,7 @@
 title: "Frank Olwenda"
 skills:
   - group: "Cloud"
-    items: ["AWS", "GCP", "Firebase"]
+    items: ["Microsoft Azure", "Google Cloud Platform", "Firebase"]
   - group: "Containers & Orchestration"
     items: ["Docker", "Kubernetes", "Helm"]
   - group: "CI/CD"
