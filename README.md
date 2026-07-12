@@ -1,4 +1,4 @@
-# frank.olwenda.me
+# frankolwenda.com
 
 Personal site and blog for Frank Olwenda — built with [Hugo](https://gohugo.io),
 deployed to [GitHub Pages](https://pages.github.com).
@@ -61,28 +61,44 @@ Publishing is: write the file → commit → push. The GitHub Actions pipeline
    `https://yourusername.github.io/frank-olwenda-site/` — this gets replaced
    by your custom domain in the next step.
 
-## 4. Connecting frank.olwenda.me
+## 4. Connecting frankolwenda.com
 
-Since `olwenda.me` is an existing domain, `frank` is just a subdomain — you
-don't need to buy anything new.
+`frankolwenda.com` is a root/apex domain (not a subdomain), which changes the
+DNS record type you need slightly.
 
 1. This repo already includes a `static/CNAME` file containing
-   `frank.olwenda.me`, which Hugo copies into every build automatically —
+   `frankolwenda.com`, which Hugo copies into every build automatically —
    GitHub Pages reads this file to know which custom domain to serve.
-2. Go to wherever `olwenda.me`'s DNS is managed (your domain registrar, or
-   a DNS provider like Cloudflare) and add a **CNAME record**:
-   - Host/name: `frank`
-   - Value/target: `yourusername.github.io`
+2. Go to wherever you registered `frankolwenda.com` (Cloudflare, Namecheap,
+   Porkbun, etc.) and add these DNS records:
+   - Four **A records** for the apex domain (`@` or blank host), pointing to
+     GitHub Pages' IP addresses:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+   - One **CNAME record** for the `www` subdomain (optional, but recommended
+     so `www.frankolwenda.com` also works): host `www` → value
+     `yourusername.github.io`
 3. Back in the repo: **Settings → Pages → Custom domain** → enter
-   `frank.olwenda.me` → Save. GitHub will verify DNS automatically.
+   `frankolwenda.com` → Save. GitHub will verify DNS automatically.
 4. Once verified, tick **Enforce HTTPS** — GitHub provisions free SSL via
    Let's Encrypt.
 5. DNS can take anywhere from a few minutes to a few hours to propagate.
 
+**Note if you register through Cloudflare:** Cloudflare's registrar requires
+using their nameservers, and by default routes traffic through their proxy
+(the orange cloud icon). For GitHub Pages to issue and verify SSL correctly,
+set the DNS records above to **"DNS only"** (grey cloud, not orange) in the
+Cloudflare dashboard, at least until GitHub's domain verification and HTTPS
+are confirmed working.
+
 ## 5. Deployment flow
 
 - **Push to `main`** → GitHub Actions builds the Hugo site and deploys it
-  straight to `frank.olwenda.me`. Check progress under the repo's **Actions**
+  straight to `frankolwenda.com`. Check progress under the repo's **Actions**
   tab.
 - No CLI, login, or manual deploy step required — it's entirely git-push-based.
 - Want to trigger a rebuild without a code change (e.g. after editing a repo
@@ -96,5 +112,5 @@ don't need to buy anything new.
       (or keep "This Website" — it's real)
 - [ ] Update `email`, `github`, `linkedin` in `hugo.toml`
 - [ ] Add a real `resume.pdf` to `static/` (referenced at `/resume.pdf`)
-- [ ] Confirm `static/CNAME` contains the exact domain: `frank.olwenda.me`
+- [ ] Confirm `static/CNAME` contains the exact domain: `frankolwenda.com`
 - [ ] Delete this checklist once you're live 🙂

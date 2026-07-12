@@ -4,7 +4,7 @@ date: 2026-07-04
 status: "in progress"
 tags: ["Hugo", "GitHub Pages", "GitHub Actions"]
 repo: "https://github.com/frankolwenda/frank-olwenda-site"
-demo: "https://frank.olwenda.me"
+demo: "https://frankolwenda.com"
 summary: "Static site built with Hugo, deployed to GitHub Pages via a GitHub Actions pipeline that builds and ships on every push to main."
 weight: 3
 ---
