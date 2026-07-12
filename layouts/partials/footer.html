@@ -1,0 +1,14 @@
+<footer class="site-footer" id="contact">
+  <div class="wrap footer__inner">
+    <div class="footer__contact">
+      <p class="footer__label">get in touch</p>
+      <a class="footer__email" href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      <div class="footer__links">
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="{{ .Site.Params.resumeURL }}">Résumé</a>
+      </div>
+    </div>
+    <p class="footer__meta">© {{ now.Format "2006" }} {{ .Site.Params.name }}. Built with Hugo, deployed on GitHub Pages.</p>
+  </div>
+</footer>

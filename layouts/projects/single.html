@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="section section--page post">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow">project</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="post__meta">
+      <span class="pill pill--{{ if eq .Params.status "production" }}ok{{ else }}pending{{ end }}">{{ .Params.status }}</span>
+      {{ if .Params.tags }}
+      <span class="logline__tags">{{ range .Params.tags }}#{{ . }} {{ end }}</span>
+      {{ end }}
+    </div>
+    <div class="hero__cta" style="margin: 1.5rem 0 2rem;">
+      {{ if .Params.repo }}<a class="btn btn--primary" href="{{ .Params.repo }}" target="_blank" rel="noopener">View repo</a>{{ end }}
+      {{ if .Params.demo }}<a class="btn btn--ghost" href="{{ .Params.demo }}" target="_blank" rel="noopener">Live demo</a>{{ end }}
+    </div>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+    <a class="back-link" href="/projects/">← back to projects</a>
+  </div>
+</article>
+{{ end }}
