@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="section section--page">
+  <div class="wrap">
+    <p class="eyebrow">blog</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ if .Content }}<p class="page-desc">{{ .Description }}</p>{{ end }}
+
+    <ul class="loglist loglist--full">
+      {{ range .Pages }}
+      <li class="logline">
+        <a href="{{ .RelPermalink }}">
+          <time class="logline__time">{{ .Date.Format "2006-01-02" }}</time>
+          <span class="logline__title">{{ .Title }}</span>
+          {{ if .Params.tags }}
+          <span class="logline__tags">{{ range .Params.tags }}#{{ . }} {{ end }}</span>
+          {{ end }}
+        </a>
+      </li>
+      {{ else }}
+      <li class="logline logline--empty">No posts yet — the first one is always the hardest to publish.</li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
