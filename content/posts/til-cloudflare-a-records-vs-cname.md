@@ -6,7 +6,7 @@ tags: ["til", "dns", "cloudflare"]
 
 I've touched DNS records for years as a sysadmin without ever really sitting down and understanding why you can't just `CNAME` your root domain. Setting up Cloudflare for this site finally forced the issue.
 
-Quick definitions if you're newer to this: an **A record (Address Record)** points a domain name straight at an IP address — it's the most direct kind of "this name means that server" mapping. A **CNAME (Canonical Name Record)** points a domain name at another domain name instead of an IP, so it's really just an alias — "this name is really that other name, go look there."
+Quick definitions if you're newer to this: an **A record (Address Record)** points a domain name straight to an IP address — it's the most direct kind of "this name means that server" mapping. A **CNAME (Canonical Name Record)** points a domain name at another domain name instead of an IP, so it's really just an alias — "this name is really that other name, go look there."
 
 Here's the situation. GitHub Pages hands you a set of IPs to point your domain to - Simply, these are public IP addresses pointing to servers owned by GitHub. For `www.frankolwenda.com`, that's easy — CNAME it to `frankolwenda.github.io` and move on. But try that on the bare root domain (`frankolwenda.com`, no `www`) and DNS pushes back. A CNAME means "this name is just an alias for that other name," full stop, and the spec won't let an alias share space with anything else at that name — like an MX (Mail Exhanger) record for email.
 
