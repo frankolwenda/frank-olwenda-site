@@ -2,6 +2,7 @@
 title: "Self-Hosted Observability Stack"
 date: 2026-02-18
 status: "production"
+draft: true
 tags: ["Prometheus", "Grafana", "Loki", "Docker Compose"]
 repo: "https://github.com/frankolwenda/observability-stack"
 demo: ""

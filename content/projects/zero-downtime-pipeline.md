@@ -2,6 +2,7 @@
 title: "Zero-Downtime Deployment Pipeline"
 date: 2026-05-10
 status: "production"
+draft: true
 tags: ["GitHub Actions", "Kubernetes", "ArgoCD", "Terraform"]
 repo: "https://github.com/frankolwenda/zero-downtime-pipeline"
 demo: ""
