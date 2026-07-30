@@ -1,7 +1,7 @@
 ---
 title: "TIL: Automating A Records and Managed Certificates on GCP with Terraform"
 date: 2026-07-29
-tags: ["til", "terraform", "gcp", "dns"]
+tags: ["til", "terraform", "gcp", "dns", "devops"]
 ---
 
 Automating certificate creation on GCP with Terraform was the easy part. What actually slowed me down was the DNS record logic underneath it — specifically, how Terraform wants to manage a DNS record set versus how I was thinking about it.
